@@ -45,6 +45,9 @@ if (isset($_GET["client_id"]))
 require_once("Services/Init/classes/class.ilInitialisation.php");
 ilInitialisation::initILIAS();
 
+// Save original target
+$_SESSION['orig_target']=urlencode($_GET['target']);
+
 $ilCtrl->initBaseClass("ilStartUpGUI");
 $ilCtrl->setCmd("showLogin");
 $ilCtrl->setTargetScript("ilias.php");
